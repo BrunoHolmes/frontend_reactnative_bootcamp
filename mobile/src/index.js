@@ -6,7 +6,7 @@ import api from './services/api';
 //Não possuem valor semantico (significado)
 //Todos os componentes possuem, por padrão, 'display: flex'
 //View: div, header, footer, main, aside, section, etc. NÃP SE USA TAGS
-//Text: p, span, strong, ha, h2, h3, etc.
+//Text: p, span, strong, h1, h2, h3, etc.
 
 export default function App() {
     const [projects, setProjects] = useState([]);
@@ -19,7 +19,7 @@ export default function App() {
 
     async function handleAddProject() {
         const response = await api.post('projects', {
-            title: `Novo projeto ${Date.now}`,
+            title: `Novo projeto ${new Date}`,
             owner: 'Bruno Holmes'
         });
 
